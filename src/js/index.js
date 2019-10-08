@@ -1,6 +1,8 @@
 $(document).ready(function() {
   new ClipboardJS('#copy');
 
+  $("#numero").mask("0.0000-0000", {reverse: true})
+
   $("#generate").click(function () {
     if ($("#generate").css("cursor") == "not-allowed") {
       return
@@ -26,7 +28,7 @@ $(document).ready(function() {
 
   $("#pais, #ddd, #numero").on("change paste keyup", function () {
     if ($("#pais").val() && $("#ddd").val() && $("#numero").val() &&
-    $("#numero").val().split(".").join("").split("-").join("").length == 9) {
+    $("#numero").val().split(".").join("").split("-").join("").length >= 8) {
       $("#generate").css("cursor", "pointer");
     } else {
       $("#generate").css("cursor", "not-allowed");
