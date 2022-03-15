@@ -1,0 +1,19 @@
+{
+  "country": "Country",
+  "state": "State",
+  "phone_number": "Phone Number",
+  "message": "Message",
+  "mask_type": {
+    "label": "Mask Type",
+    "brazil": "Brazil",
+    "en_us": "E.U.A",
+    "none": "No Mask"
+  },
+  "submit_button": "Generate Link",
+  "modal": {
+    "title": "Link Generated",
+    "copy": "Copy",
+    "copied": "Copied",
+    "close": "Close"
+  }
+}

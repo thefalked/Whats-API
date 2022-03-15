@@ -1,0 +1,19 @@
+{
+  "country": "País",
+  "state": "Estado",
+  "phone_number": "Número de Celular",
+  "message": "Mensagem",
+  "mask_type": {
+    "label": "Tipo de Máscara",
+    "brazil": "Brasil",
+    "en_us": "E.U.A",
+    "none": "Sem Máscara"
+  },
+  "submit_button": "Gerar Link",
+  "modal": {
+    "title": "Link Gerado",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "close": "Fechar"
+  }
+}
