@@ -23,8 +23,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { FormEvent, useRef, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { Header } from "./components/Header";
-import { LinkModal } from "./components/LinkModal";
+import { Header } from "../components/Header";
+import { LinkModal } from "../components/LinkModal";
 
 type MaskTypes = "pt-BR" | "en-US" | "none";
 
