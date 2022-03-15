@@ -16,7 +16,7 @@
 
 <br>
 
-## 🌎 Available on <https://whats-api.herokuapp.com/>
+## 🌎 Available on <https://whats-api.vercel.app/>
 
 ## 🧪 Technologies
 
