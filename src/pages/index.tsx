@@ -13,6 +13,7 @@ import {
   RadioGroup,
   Stack,
   Textarea,
+  useBreakpointValue,
   useClipboard,
   useDisclosure,
   useToast,
@@ -41,6 +42,7 @@ const Home: NextPage = () => {
   const { t } = useTranslation("common");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { hasCopied, onCopy } = useClipboard(finalLink);
+  const radioSize = useBreakpointValue({ base: "sm", md: "md" });
 
   const finalRef = useRef(null);
 
@@ -96,11 +98,13 @@ const Home: NextPage = () => {
     }
 
     if (phone && message) {
-      setFinalLink(`https://wa.me/${country}${state}${phone}?text=${message}`);
+      setFinalLink(
+        `https://wa.me/${country}${state}${phone}?text=${encodeURI(message)}`
+      );
     } else if (phone) {
       setFinalLink(`https://wa.me/${country}${state}${phone}`);
     } else {
-      setFinalLink(`https://wa.me/?text=${message}`);
+      setFinalLink(`https://wa.me/?text=${encodeURI(message)}`);
     }
 
     onOpen();
@@ -109,17 +113,19 @@ const Home: NextPage = () => {
   return (
     <Flex minH="100vh" bg="gray.50" direction="column">
       <Head>
-        <title>Whats API</title>
-        <meta
-          name="description"
-          content="Create links with messages for WhatsApp"
-        />
-        <link rel="icon" href="/favicon.ico" />
+        <title>WhatsApp Link Creator</title>
+
+        <meta name="description" content={t("meta.description")} />
+        <meta name="og:title" content="WhatsApp Link Creator" />
+        <meta name="og:description" content={t("meta.description")} />
+        <meta name="og:image" content="/whatsapp.png" />
+
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <Header />
 
-      <Flex justify="center">
+      <Flex justify="center" px="4">
         <Stack
           as="form"
           w="full"
@@ -136,6 +142,8 @@ const Home: NextPage = () => {
               <FormLabel htmlFor="country">{t("country")}</FormLabel>
               <NumberInput
                 id="country"
+                inputMode="numeric"
+                pattern="[0-9]*"
                 defaultValue={1}
                 min={1}
                 value={formatCountryValue(country)}
@@ -154,6 +162,8 @@ const Home: NextPage = () => {
               <FormLabel htmlFor="ddd">{t("state")}</FormLabel>
               <NumberInput
                 id="ddd"
+                inputMode="numeric"
+                pattern="[0-9]*"
                 min={1}
                 value={state}
                 onChange={(_stateString, stateNumber) => setState(stateNumber)}
@@ -173,6 +183,8 @@ const Home: NextPage = () => {
               ref={finalRef}
               type="text"
               placeholder="Phone Number"
+              inputMode="numeric"
+              pattern="[0-9]*"
               value={formatPhoneValue(phone)}
               onChange={(e) => setPhone(e.target.value.replace(/\D/g, ""))}
             />
@@ -194,6 +206,7 @@ const Home: NextPage = () => {
               colorScheme="whatsapp"
               aria-describedby="settings"
               name="settings"
+              size={radioSize}
             >
               <Stack direction="row">
                 <Radio value="pt-BR">{t("mask_type.brazil")}</Radio>

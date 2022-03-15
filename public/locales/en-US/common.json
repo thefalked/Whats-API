@@ -1,4 +1,7 @@
 {
+  "meta": {
+    "description": "Create links with messages for WhatsApp"
+  },
   "country": "Country",
   "state": "State",
   "phone_number": "Phone Number",

@@ -1,4 +1,7 @@
 {
+  "meta": {
+    "description": "Crie links com mensagens para o WhatsApp"
+  },
   "country": "País",
   "state": "Estado",
   "phone_number": "Número de Celular",

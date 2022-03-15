@@ -14,9 +14,9 @@ export const Header: NextPage = () => {
         rounded="lg"
         justify="center"
       >
-        <Heading as="h1" fontSize="3xl">
+        <Heading as="h1" fontSize={{ base: "lg", md: "3xl" }}>
           <Icon as={FaWhatsapp} name="Whatsapp icon" mr="2" />
-          WhatsApp API
+          WhatsApp Link Creator
         </Heading>
       </Flex>
     </Container>
