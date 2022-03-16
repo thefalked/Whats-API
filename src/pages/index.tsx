@@ -16,7 +16,7 @@ import {
   useBreakpointValue,
   useClipboard,
   useDisclosure,
-  useToast,
+  useToast
 } from "@chakra-ui/react";
 import type { GetStaticProps, NextPage } from "next";
 import { useTranslation } from "next-i18next";
@@ -114,12 +114,26 @@ const Home: NextPage = () => {
     <Flex minH="100vh" bg="gray.50" direction="column">
       <Head>
         <title>WhatsApp Link Creator</title>
-
         <meta name="description" content={t("meta.description")} />
+
+        {/* Facebook Meta Tags */}
+        <meta property="og:url" content="https://whats-api.vercel.app/" />
+        <meta property="og:type" content="website" />
         <meta name="og:title" content="WhatsApp Link Creator" />
         <meta name="og:description" content={t("meta.description")} />
         <meta
           name="og:image"
+          content="https://whats-api.vercel.app/whatsapp.png"
+        />
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="whats-api.vercel.app" />
+        <meta property="twitter:url" content="https://whats-api.vercel.app/" />
+        <meta name="twitter:title" content="WhatsApp Link Creator" />
+        <meta name="twitter:description" content={t("meta.description")} />
+        <meta
+          name="twitter:image"
           content="https://whats-api.vercel.app/whatsapp.png"
         />
 
