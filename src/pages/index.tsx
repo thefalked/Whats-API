@@ -118,7 +118,10 @@ const Home: NextPage = () => {
         <meta name="description" content={t("meta.description")} />
         <meta name="og:title" content="WhatsApp Link Creator" />
         <meta name="og:description" content={t("meta.description")} />
-        <meta name="og:image" content="/whatsapp.png" />
+        <meta
+          name="og:image"
+          content="https://whats-api.vercel.app/whatsapp.png"
+        />
 
         <link rel="icon" href="/favicon.png" />
       </Head>
