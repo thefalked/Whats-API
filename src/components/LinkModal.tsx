@@ -10,9 +10,9 @@ import {
 } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import { useTranslation } from "next-i18next";
-import { MutableRefObject } from "react";
+import { MutableRefObject, useRef } from "react";
 
-type ModalProps = {
+export type ModalProps = {
   finalRef: MutableRefObject<null>;
   isOpen: boolean;
   onClose: () => void;
@@ -31,8 +31,11 @@ export const LinkModal: NextPage<ModalProps> = ({
 }: ModalProps) => {
   const { t } = useTranslation("common");
 
+  const initialRef = useRef(null);
+
   return (
     <Modal
+      initialFocusRef={initialRef}
       finalFocusRef={finalRef}
       isOpen={isOpen}
       onClose={onClose}
@@ -48,7 +51,12 @@ export const LinkModal: NextPage<ModalProps> = ({
           <Button variant="ghost" mr={3} onClick={onClose}>
             {t("modal.close")}
           </Button>
-          <Button variant="solid" colorScheme="whatsapp" onClick={onCopy}>
+          <Button
+            ref={initialRef}
+            variant="solid"
+            colorScheme="whatsapp"
+            onClick={onCopy}
+          >
             {hasCopied ? t("modal.copied") : t("modal.copy")}
           </Button>
         </ModalFooter>

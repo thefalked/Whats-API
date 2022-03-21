@@ -18,5 +18,13 @@
     "copy": "Copy",
     "copied": "Copied",
     "close": "Close"
+  },
+  "toastPhoneOrMessage": {
+    "title": "Ops!",
+    "description": "Please fill at least one of the fields."
+  },
+  "toastCountryAndState": {
+    "title": "Ops!",
+    "description": "Country and State cannot be 0."
   }
 }

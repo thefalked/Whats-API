@@ -18,5 +18,13 @@
     "copy": "Copiar",
     "copied": "Copiado",
     "close": "Fechar"
+  },
+  "toastPhoneOrMessage": {
+    "title": "Ops!",
+    "description": "Por favor preencha pelo menos um dos campos. Número de Celular ou Mensagem."
+  },
+  "toastCountryAndState": {
+    "title": "Ops!",
+    "description": "Country and State cannot be 0."
   }
 }
